@@ -1,18 +1,19 @@
 const express = require('express');
-const data = require('./produtos.json');
+const router = require('express').Router();
+const data = require('../files/produtos.json');
 const fs = require("fs");
-const app = express();
-app.use(express.json())
 
-app.get('/produtos', (req, res) => {
+router.use(express.json())
+
+router.get('/produtos', (req, res) => {
     res.json(data.produtos)
 });
 // Get de todos os produtos
-app.get('/produtos/:id', (req, res) => {
+router.get('/produtos/:id', (req, res) => {
     res.json(data.produtos[req.params.id - 1])
 });
 // Get de um prduto especifico
-app.post('/produtos/', (req, res) => {
+router.post('/produtos/', (req, res) => {
     const novoProduto = req.body;
     console.log(novoProduto);
     novoProduto.id = data.produtos.length + 1;
@@ -26,7 +27,7 @@ app.post('/produtos/', (req, res) => {
 });
 
 // Update um produto especifico
-app.put('/produtos/:id', (req, res) => {
+router.put('/produtos/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const updateProduto = req.body;
     const index = data.produtos.findIndex(produto => produto.id === id);
@@ -43,7 +44,7 @@ app.put('/produtos/:id', (req, res) => {
 });
 
 // DELETE produto 
-app.delete('/produtos/:id', (req, res) => {
+router.delete('/produtos/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const index = data.produtos.findIndex(produto => produto.id === id);
     if (index !== -1) {
@@ -57,4 +58,4 @@ app.delete('/produtos/:id', (req, res) => {
     }
 });
 
-app.listen(3000, () => console.log("servidor rodando na porta 3000"));
+module.exports = router;
