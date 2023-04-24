@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "name": "projeto-1-node",
+    "builds": [
+      {
+        "src": "./src/app/server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "server.js"
+      }
+    ]
+  }
