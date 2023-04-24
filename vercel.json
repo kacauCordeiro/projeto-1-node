@@ -3,7 +3,7 @@
     "name": "projeto-1-node",
     "routes": [
       {
-        "src": "/(.*)",
+        "src": "/src/app/(.*)",
         "dest": "/src/app/server.js"
       }
     ]
