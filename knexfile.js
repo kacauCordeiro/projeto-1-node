@@ -33,7 +33,7 @@ module.exports = {
     connection: {
       host: 'db.auqctsjnascrxzleruav.supabase.co',
       database: 'postgres',
-      user:     'username',
+      user:     'postgres',
       password: 'Forfun442@876##',
       port: 5432
     },
