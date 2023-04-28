@@ -15,9 +15,11 @@ module.exports = {
   staging: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'Forfun442@876##'
+      host: 'db.auqctsjnascrxzleruav.supabase.co',
+      database: 'postgres',
+      user:     'postgres',
+      password: 'Forfun442@876##',
+      port: 5432
     },
     pool: {
       min: 2,
