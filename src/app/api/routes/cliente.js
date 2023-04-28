@@ -1,6 +1,12 @@
 const express = require('express');
 const routerCliente = express.Router();
-
+// const knex = require('knex')({
+//     client: 'sqlite3',
+//     connection: {
+//       filename: './dev.sqlite3'
+//     }
+//  })
+const config = require('../knexfile')
 const knex = require('knex')({
     ...config.production
     });
