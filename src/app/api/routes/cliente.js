@@ -1,15 +1,12 @@
 const express = require('express');
 const routerCliente = express.Router();
-// const knex = require('knex')({
-//     client: 'sqlite3',
-//     connection: {
-//       filename: './dev.sqlite3'
-//     }
-//  })
-const config = require('../knexfile')
+
 const knex = require('knex')({
-    ...config.production
-    });
+    client: 'sqlite3',
+    connection: {
+      filename: './dev.sqlite3'
+    }
+ })
 
 routerCliente.use (express.urlencoded())
 routerCliente.use(express.json())
@@ -18,7 +15,7 @@ routerCliente.get('/cliente', function (req, res) {
     knex.select('*').from('cliente')
     .then (cliente => res.json(cliente))
     .catch (err => res.json ({ message: `Erro ao recuperar cliente: ${err.message}` }))
-  });
+  })
 
 routerCliente.get('/cliente/:id', (req, res) => {
     knex.select('*').from('cliente')
