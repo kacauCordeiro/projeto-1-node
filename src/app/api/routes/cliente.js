@@ -1,13 +1,10 @@
 const express = require('express');
 const routerCliente = express.Router();
 
-
-const path = require ('path')
-const db = path.join(__dirname, 'dev.sqlite3');
 const knex = require('knex')({
     client: 'sqlite3',
     connection: {
-      filename: db
+      filename: './dev.sqlite3'
     }
  })
 
