@@ -17,7 +17,7 @@ module.exports = {
     connection: {
       database: 'my_db',
       user:     'username',
-      password: 'password'
+      password: 'Forfun442@876##'
     },
     pool: {
       min: 2,
@@ -33,7 +33,7 @@ module.exports = {
     connection: {
       database: 'my_db',
       user:     'username',
-      password: 'password'
+      password: 'Forfun442@876##'
     },
     pool: {
       min: 2,
