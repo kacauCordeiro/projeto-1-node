@@ -1,13 +1,16 @@
 const express = require('express');
 const routerCliente = express.Router();
+const config = require('../../../../knexfile.js');
+// const knex = require('knex')({
+//     client: 'sqlite3',
+//     connection: {
+//       filename: './dev.sqlite3'
+//     }
+//  })
 
 const knex = require('knex')({
-    client: 'sqlite3',
-    connection: {
-      filename: './dev.sqlite3'
-    }
+    ...config.production
  })
-
 routerCliente.use (express.urlencoded())
 routerCliente.use(express.json())
 
