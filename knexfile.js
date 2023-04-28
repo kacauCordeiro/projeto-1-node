@@ -31,9 +31,11 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
+      host: 'db.auqctsjnascrxzleruav.supabase.co',
+      database: 'postgres',
       user:     'username',
-      password: 'Forfun442@876##'
+      password: 'Forfun442@876##',
+      port: 5432
     },
     pool: {
       min: 2,
